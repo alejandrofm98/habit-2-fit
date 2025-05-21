@@ -24,8 +24,7 @@
         <action android:name="android.intent.action.VIEW"/>
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
-        <data android:scheme="com.walac.habit2fit"/>
-        <data android:scheme="exp+habit-2-fit"/>
+        <data android:scheme="habit2fit"/>
       </intent-filter>
     </activity>
   </application>
