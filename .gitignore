@@ -42,3 +42,7 @@ app-example
 /GoogleService-Info.plist
 /.idea/
 /services/.env
+habit-2-fit.keystore
+android/app/google-services.json
+android/*
+/android/*

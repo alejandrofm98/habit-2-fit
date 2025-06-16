@@ -1,9 +1,9 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, Platform, View } from 'react-native';
-import Animated, { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
+import { Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 
 import { signInWithGoogle } from '@/services/AuthService';
-import {useRouter} from "expo-router";
+import { useRouter } from "expo-router";
 
 // Google logo component
 const GoogleLogo = () => (
@@ -36,8 +36,9 @@ const GoogleButton= () => {
   const handleLogin = async () => {
     try {
       const user = await signInWithGoogle();
+      console.log('User logged in:', user);
       if (user){
-        router.replace("/(tabs)");
+        router.navigate('/(init)/step1');
       }
     } catch (error) {
       console.error('Login failed:', error);

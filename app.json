@@ -7,7 +7,7 @@
     "icon": "./assets/images/icon.png",
     "scheme": "habit2fit",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "newArchEnabled": false,
     "ios": {
       "supportsTablet": true,
       "googleServicesFile": "./GoogleService-Info.plist",
@@ -38,6 +38,7 @@
           "initialRouteName": "Login"
         }
       ],
+      "@react-native-google-signin/google-signin",
       "@react-native-firebase/app",
       "@react-native-firebase/auth",
       [

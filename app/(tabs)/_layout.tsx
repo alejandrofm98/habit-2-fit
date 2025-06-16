@@ -1,7 +1,7 @@
 import { Tabs } from 'expo-router';
+import { Home, Search } from 'lucide-react-native';
 import React from 'react';
 import { Platform } from 'react-native';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
@@ -26,14 +26,14 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <MaterialIcons name="home" size={24} color={color} />,
+          tabBarIcon: ({ color }) => <Home size={24} color={color} />,
         }}
       />
       <Tabs.Screen
         name="explore"
         options={{
           title: 'Explore',
-          tabBarIcon: ({ color }) => <MaterialIcons name="explore" size={24} color={color} />,
+          tabBarIcon: ({ color }) => <Search size={24} color={color} />,
         }}
       />
     </Tabs>

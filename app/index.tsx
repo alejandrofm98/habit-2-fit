@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
 import { useRouter } from 'expo-router';
+import { useEffect } from 'react';
+import { Text, View } from 'react-native';
 import { useAuth } from './_layout';
-import { View, Text } from 'react-native';
 
 export default function Index() {
   const { user, loading } = useAuth();
@@ -10,7 +10,8 @@ export default function Index() {
   useEffect(() => {
     if (!loading) {
       if (user) {
-        router.replace('/(tabs)'); // Replace with your home screen path
+        //router.replace('/(tabs)'); // Replace with your home screen path
+        router.replace('/(init)/step1');
       } else {
         router.replace('/(auth)');
       }
