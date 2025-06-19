@@ -38,7 +38,7 @@ const GoogleButton= () => {
       const user = await signInWithGoogle();
       console.log('User logged in:', user);
       if (user){
-        router.navigate('/(init)/step1');
+        router.navigate('/(onboarding)/step1');
       }
     } catch (error) {
       console.error('Login failed:', error);

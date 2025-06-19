@@ -1,16 +1,13 @@
+import { useColorScheme } from '@/hooks/useColorScheme';
 import { getCurrentGoogleUser } from '@/services/AuthService';
 import { configureGoogleSignIn } from '@/services/GoogleSignInConfig';
+import { User } from '@react-native-google-signin/google-signin';
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import 'react-native-reanimated';
-
-
-
-import { useColorScheme } from '@/hooks/useColorScheme';
-import { User } from '@react-native-google-signin/google-signin';
 
 interface AuthContextType {
   user: User | null;
@@ -57,11 +54,11 @@ export default function RootLayout() {
   return (
     <AuthContext.Provider value={{ user, setUser, loading }}>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <Stack>
+        <Stack screenOptions={{ headerShown: false }}>
           <Stack.Screen name="(auth)" options={{ headerShown: false }} />
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="(init)" options={{ headerShown: false }} />
-          <Stack.Screen name="+not-found" />
+          <Stack.Screen name="(onboarding)" options={{ headerShown: false }} />
+          <Stack.Screen name="+not-found" options={{ headerShown: false}} />
         </Stack>
         <StatusBar style="auto" />
       </ThemeProvider>

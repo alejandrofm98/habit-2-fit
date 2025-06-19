@@ -1,5 +1,5 @@
 import { useRouter } from 'expo-router';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Text, View } from 'react-native';
 import { useAuth } from './_layout';
 
@@ -11,7 +11,7 @@ export default function Index() {
     if (!loading) {
       if (user) {
         //router.replace('/(tabs)'); // Replace with your home screen path
-        router.replace('/(init)/step1');
+        router.push('/(onboarding)/step1');
       } else {
         router.replace('/(auth)');
       }
